@@ -11,8 +11,6 @@
 |
 */
 
-Route::get('/','HomepageController@helloWorld');
-
-Route::get('/cart','myCartController@viewCart');
-
-?>
+Route::get('/', function () {
+    return view('welcome');
+});
