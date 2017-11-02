@@ -12,3 +12,7 @@
 */
 
 Route::get('/','HomepageController@helloWorld');
+
+Route::get('/cart','myCartController@viewCart');
+
+?>
