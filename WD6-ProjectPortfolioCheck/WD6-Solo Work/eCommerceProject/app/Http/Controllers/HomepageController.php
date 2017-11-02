@@ -8,7 +8,7 @@
 		
 		public function helloWorld(){
 			
-			return view('helloworld');
+			return view('index');
 			
 		}
 		
