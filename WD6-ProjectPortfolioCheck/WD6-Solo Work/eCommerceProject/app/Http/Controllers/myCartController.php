@@ -4,7 +4,7 @@
 	use App\User;
 	use App\Http\Controllers\Controller;
 	
-	class HomepageController extends Controller{
+	class myCartController extends Controller{
 		
 		public function viewCart(){
 			
