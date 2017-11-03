@@ -5,10 +5,17 @@
 		<meta name="viewport" content="width=device-width"/>
 		<link rel="stylesheet" href="{{ asset('assets/css/materialize.min.css') }}" />
 		<link rel="stylesheet" href="{{ asset('assets/css/main.css') }}" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
 		<script src="https://use.fontawesome.com/2e58db1670.js"></script>
         <title>@yield('title')</title>
     </head>
     <body>
+		<ul class="dropdown-content" id="accountDropdown">
+			<!--PHP logic goes here to determine what links are shown...-->
+			<li><a href="#">Sign In</a></li>
+			<li><a href="#">Sign Up</a></li>
+		</ul>
+	
 		<header>
 			<div class="navbar-fixed">
 				<nav>
@@ -16,7 +23,7 @@
 						<a class="brand-logo left" href="/">WD6 Store</a>
 						
 						<ul class="right hide-on-small-only">
-							<li><a href="#!"><i class="fa fa-user fa-lg"></i> My Account</a></li>
+							<li><a class="dropdown-button" data-activates="accountDropdown" href="#!"><i class="fa fa-user fa-lg"></i> My Account <i class="material-icons right">arrow_drop_down</i></a></li>
 							<li><a href="/cart"><i class="fa fa-shopping-cart fa-lg"></i> My Cart</a></li>
 						</ul>
 					</div>
