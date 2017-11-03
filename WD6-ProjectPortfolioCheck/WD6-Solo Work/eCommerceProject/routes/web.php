@@ -18,6 +18,16 @@ Route::get('/cart', 'myCartController@viewCart');
 /*
 For use later...
 
+Route::get('/signup',[
+	"uses"=>"UserController@getSignup,
+	"as"=>"users.signup"
+]);
+
+Route::post('/signup',[
+	"uses"=>"UserController@postSignup,
+	"as"=>"users.signup"
+]);
+
 */
 
 ?>
