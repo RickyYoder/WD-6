@@ -13,11 +13,11 @@
 			<div class="navbar-fixed">
 				<nav>
 					<div class="nav-wrapper">
-						<a class="brand-logo left" href="#!">WD6 Store</a>
+						<a class="brand-logo left" href="/">WD6 Store</a>
 						
 						<ul class="right hide-on-small-only">
 							<li><a href="#!"><i class="fa fa-user fa-lg"></i> My Account</a></li>
-							<li><a href="#!"><i class="fa fa-shopping-cart fa-lg"></i> My Cart</a></li>
+							<li><a href="/cart"><i class="fa fa-shopping-cart fa-lg"></i> My Cart</a></li>
 						</ul>
 					</div>
 				</nav>
