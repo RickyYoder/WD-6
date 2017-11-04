@@ -20,12 +20,12 @@ For use later...
 
 Route::get('/signup',[
 	"uses"=>"UserController@getSignup,
-	"as"=>"users.signup"
+	"as"=>"user.signup"
 ]);
 
 Route::post('/signup',[
 	"uses"=>"UserController@postSignup,
-	"as"=>"users.signup"
+	"as"=>"user.signup"
 ]);
 
 */
