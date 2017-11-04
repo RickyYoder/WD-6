@@ -15,19 +15,15 @@ Route::get('/', 'HomepageController@helloWorld');
 
 Route::get('/cart', 'myCartController@viewCart');
 
-/*
-For use later...
-
 Route::get('/signup',[
-	"uses"=>"UserController@getSignup,
+	"uses"=>"UserController@getSignup",
 	"as"=>"users.signup"
 ]);
 
 Route::post('/signup',[
-	"uses"=>"UserController@postSignup,
+	"uses"=>"UserController@postSignup",
 	"as"=>"users.signup"
 ]);
 
-*/
 
 ?>

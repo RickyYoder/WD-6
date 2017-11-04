@@ -3,5 +3,11 @@
 @section('title','Sign Up For An Account')
 
 @section('content')
-	<h1>Coming soon!</h1>
+	<div class="container">
+		<div class="row">
+			<form class="col s12 m6 offset-s6">
+				
+			</form>
+		</div>
+	</div>
 @endsection
