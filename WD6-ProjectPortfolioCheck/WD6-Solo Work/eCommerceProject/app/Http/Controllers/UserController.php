@@ -9,6 +9,7 @@ class UserController extends Controller
 {
     public function getSignup(){
 		//return signup view
+		return view('user.signup');
 	}
 	
 	public function postSignup(Request $request){
