@@ -17,12 +17,12 @@ Route::get('/cart', 'myCartController@viewCart');
 
 Route::get('/signup',[
 	"uses"=>"UserController@getSignup",
-	"as"=>"user.signup"
+	"as"=>"users.signup"
 ]);
 
 Route::post('/signup',[
 	"uses"=>"UserController@postSignup",
-	"as"=>"user.signup"
+	"as"=>"users.signup"
 ]);
 
 
