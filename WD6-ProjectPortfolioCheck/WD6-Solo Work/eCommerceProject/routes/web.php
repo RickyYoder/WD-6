@@ -25,5 +25,9 @@ Route::post('/signup',[
 	"as"=>"users.signup"
 ]);
 
+Route::get('/phpinfo',function(){
+	die(phpinfo());
+});
+
 
 ?>
