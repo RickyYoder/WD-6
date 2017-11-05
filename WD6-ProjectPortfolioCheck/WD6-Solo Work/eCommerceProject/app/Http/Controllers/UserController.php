@@ -16,7 +16,8 @@ class UserController extends Controller
 		//sign user up with credentials
 		$this->validate($request,[
 			'email'=>'email|required|unique:users',
-			'password'=>'required|min:6'
+			'password'=>'required|min:6',
+			'confirmedPassword'=>'required|same:password'
 		]);
 		
 		//note: add password confirmation later...
@@ -28,6 +29,6 @@ class UserController extends Controller
 		
 		$user->save();
 		
-		return redirect()->route('/');
+		header("Location:/");
 	}
 }

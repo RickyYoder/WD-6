@@ -11,7 +11,10 @@
 |
 */
 
-Route::get('/', 'HomepageController@helloWorld');
+Route::get('/', [
+	"uses"=>'HomepageController@helloWorld',
+	"as"=>"index"
+]);
 
 Route::get('/cart', 'myCartController@viewCart');
 

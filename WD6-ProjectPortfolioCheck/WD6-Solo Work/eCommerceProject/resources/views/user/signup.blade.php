@@ -10,8 +10,17 @@
 				<h4>Create an account to get the most out of WD6</h4>
 			</div>
 		</div>
+		@if(count($errors) > 0)
+			<div class="row">
+				<div class="col s12 white-text red darken-2">
+					@foreach($errors->all() as $error)
+						<p>{{ $error }}</p>
+					@endforeach
+				</div>
+			</div>
+		@endif
 		<div class="row">
-			<form class="col s12 m6 offset-m3 center-align">
+			<form action="/signup" method="post" class="col s12 m6 offset-m3 center-align">
 				<div class="row">
 					<div class="col s12 input-field">
 						<label for="email">Email</label>
@@ -26,7 +35,14 @@
 				</div>
 				<div class="row">
 					<div class="col s12 input-field">
+						<label for="email">Confirm Password</label>
+						<input type="password" name="confirmedPassword" placeholder="Secret!" />
+					</div>
+				</div>
+				<div class="row">
+					<div class="col s12 input-field">
 						<button class="btn btn-large waves waves-effect waves-light" type="submit">Create Account</button>
+						{{ csrf_field() }}
 					</div>
 				</div>
 			</form>
