@@ -44,7 +44,9 @@
 		</div>
 		
 		<div class="row">
-			<a class="btn btn-large" href="#!">Checkout</a>
+			<div class="col s12">
+				<a class="btn btn-large right waves waves-effect" href="#!">Checkout</a>
+			</div>
 		</div>
 	</div>
 @endsection

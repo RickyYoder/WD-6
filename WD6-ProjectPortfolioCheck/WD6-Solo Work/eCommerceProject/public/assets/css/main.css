@@ -50,4 +50,7 @@ main {
 
 .saved img{
 	width:100%;
+	max-width:120px;
+	display:block;
+	margin:0 auto;
 }
