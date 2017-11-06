@@ -42,3 +42,12 @@ main {
 .btn{
 	background:#dd2c00 !important;
 }
+
+.saved{
+	background:#b5ffff;
+	padding:1rem;
+}
+
+.saved img{
+	width:100%;
+}

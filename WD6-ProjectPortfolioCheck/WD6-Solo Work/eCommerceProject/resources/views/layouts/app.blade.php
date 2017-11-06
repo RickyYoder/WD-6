@@ -12,8 +12,8 @@
     <body>
 		<ul class="dropdown-content" id="accountDropdown">
 			<!--PHP logic goes here to determine what links are shown...-->
-			<li><a href="#">Sign In</a></li>
-			<li><a href="#">Sign Up</a></li>
+			<li><a href="/signin">Sign In</a></li>
+			<li><a href="/signup">Sign Up</a></li>
 		</ul>
 	
 		<header>
