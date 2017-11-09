@@ -43,12 +43,14 @@ main {
 	background:#dd2c00 !important;
 }
 
-.saved{
-	background:#b5ffff;
+.saved, .product{
+	border:2px solid #b5ffff;
+	border-radius:.5rem;
 	padding:1rem;
+	text-align:center;
 }
 
-.saved img{
+.saved img, .product img{
 	width:100%;
 	max-width:120px;
 	display:block;

@@ -12,8 +12,13 @@
     <body>
 		<ul class="dropdown-content" id="accountDropdown">
 			<!--PHP logic goes here to determine what links are shown...-->
+			@if(Auth::check())
+			<li><a href="/profile">My Profile</a></li>
+			<li><a href="/logout">Log Out</a>
+			@else
 			<li><a href="/signin">Sign In</a></li>
 			<li><a href="/signup">Sign Up</a></li>
+			@endif
 		</ul>
 	
 		<header>
@@ -33,6 +38,11 @@
 		
 		<main>
 			@yield('content')
+			@if(Auth::check())
+			 @php
+				echo print_r(Auth::user());
+			 @endphp
+			@endif
 		</main>
 		
 		<footer class="page-footer">

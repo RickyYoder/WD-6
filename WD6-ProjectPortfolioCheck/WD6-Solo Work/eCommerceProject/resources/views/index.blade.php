@@ -3,5 +3,21 @@
 @section('title','Homepage')
 
 @section('content')
-	<h1>Coming soon!</h1>
+	<div class="container">
+		<div class="row">
+			@foreach($products as $product)
+				<div class="col s12 m4">
+					<div class="product">
+					<img src="{{ $product->imagePath }}" alt="Product Image" />
+					{{ $product->title }}
+					<div class="row">
+						<div class="col s12 right">
+							<a class="btn waves waves-effect waves-dark"><i class="material-icons">add_shopping_cart</i> Add to Cart</a>
+						</div>
+					</div>
+					</div>
+				</div>
+			@endforeach
+		</div>
+	</div>
 @endsection

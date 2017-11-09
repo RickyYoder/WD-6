@@ -12,8 +12,8 @@
 */
 
 Route::get('/', [
-	"uses"=>'HomepageController@helloWorld',
-	"as"=>"index"
+	"uses"=>'ProductController@getIndex',
+	"as"=>"product.index"
 ]);
 
 Route::get('/cart', 'myCartController@viewCart');
