@@ -16,6 +16,16 @@ Route::get('/', [
 	"as"=>"product.index"
 ]);
 
+Route::get('/saveForLater',[
+	"uses"=>"ProductController@saveForLater",
+	"as"=>"product.saveForLater"
+]);
+
+Route::get('/addToCart',[
+	"uses"=>"ProductController@addToCart",
+	"as"=>"product.addToCart"
+]);
+
 Route::get('/cart', 'myCartController@viewCart');
 
 Route::get('/signup',[

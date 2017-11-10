@@ -14,4 +14,9 @@ class ProductController extends Controller
 			"products"=>$products
 		]);
 	}
+	
+	public function getAddToCart(Request $request, $id){
+		$product = Product::find($id);
+		
+	}
 }
