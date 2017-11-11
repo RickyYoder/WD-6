@@ -19,11 +19,25 @@
 			</div>
 		@endif
 		
+		
+		@if(Session::has('cart'))
+		<div class="row">
+		@foreach($products as $product)
+			<div class="col s12 m4">
+				<div class="product">
+				<img src="{{ $product['item']['imagePath'] }}" alt="Product Image" />
+				{{ $product['item']['title'] }}
+				</div>
+			</div>
+		@endforeach
+		</div>
+		@else
 		<div class="row">
 			<div class="col s12">
 				<p>You have nothing in your cart at the moment.</p>
 			</div>
 		</div>
+		@endif
 		
 		<div class="row">
 			<div class="col s12">

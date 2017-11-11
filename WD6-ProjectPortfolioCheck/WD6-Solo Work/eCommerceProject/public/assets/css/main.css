@@ -56,3 +56,8 @@ main {
 	display:block;
 	margin:0 auto;
 }
+
+.badge{
+	background:#a30000;
+	color:#fff !important;
+}

@@ -12,7 +12,7 @@
 					{{ $product->title }}
 					<div class="row">
 						<div class="col s12 right">
-							<a class="btn waves waves-effect waves-dark"><i class="material-icons">add_shopping_cart</i> Add to Cart</a>
+							<a href="{{ route('product.addToCart', ['id'=>$product->id]) }}" class="btn waves waves-effect waves-dark"><i class="material-icons">add_shopping_cart</i> Add to Cart</a>
 						</div>
 					</div>
 					</div>

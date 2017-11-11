@@ -21,12 +21,12 @@ Route::get('/saveForLater',[
 	"as"=>"product.saveForLater"
 ]);
 
-Route::get('/addToCart',[
-	"uses"=>"ProductController@addToCart",
+Route::get('/addToCart/{id}',[
+	"uses"=>"ProductController@getAddToCart",
 	"as"=>"product.addToCart"
 ]);
 
-Route::get('/cart', 'myCartController@viewCart');
+Route::get('/cart', 'ProductController@getCart');
 
 Route::get('/signup',[
 	"uses"=>"UserController@getSignup",

@@ -29,7 +29,7 @@
 						
 						<ul class="right hide-on-small-only">
 							<li><a class="dropdown-button" data-activates="accountDropdown" href="#!"><i class="fa fa-user fa-lg"></i> My Account <i class="material-icons right">arrow_drop_down</i></a></li>
-							<li><a href="/cart"><i class="fa fa-shopping-cart fa-lg"></i> My Cart</a></li>
+							<li><a href="/cart"><i class="fa fa-shopping-cart fa-lg"></i> My Cart <span class="badge">{{ Session::has('cart') ? Session::get('cart')->totalQty : '0' }}</span></a></li>
 						</ul>
 					</div>
 				</nav>
@@ -61,6 +61,7 @@
 		</footer>
 		
 		<script src="{{ asset('assets/js/jquery.min.js') }}"></script>
+		<script src="{{ asset('assets/js/matchHeight.js') }}"></script>
 		<script src="{{ asset('assets/js/materialize.min.js') }}"></script>
 		<script src="{{ asset('assets/js/main.js') }}"></script>
     </body>
