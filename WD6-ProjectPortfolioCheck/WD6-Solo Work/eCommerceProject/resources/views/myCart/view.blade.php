@@ -25,8 +25,15 @@
 		@foreach($products as $product)
 			<div class="col s12 m4">
 				<div class="product">
+				<span class="badge">{{ $product['qty'] }}</span>
 				<img src="{{ $product['item']['imagePath'] }}" alt="Product Image" />
 				{{ $product['item']['title'] }}
+				<div class="row"></div>
+				<div class="row">
+					<div class="col s12 m6 offset-m6">
+						<a class="btn waves waves-effect waves-dark" href="/removeFromCart/{{ $product['item']['id'] }}"><i class="material-icons">delete</i></a>
+					</div>
+				</div>
 				</div>
 			</div>
 		@endforeach

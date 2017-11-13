@@ -39,9 +39,7 @@
 		<main>
 			@yield('content')
 			@if(Auth::check())
-			 @php
-				echo print_r(Auth::user());
-			 @endphp
+			 
 			@endif
 		</main>
 		

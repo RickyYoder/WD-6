@@ -16,9 +16,9 @@ Route::get('/', [
 	"as"=>"product.index"
 ]);
 
-Route::get('/saveForLater',[
-	"uses"=>"ProductController@saveForLater",
-	"as"=>"product.saveForLater"
+Route::get('/save/{id}',[
+	"uses"=>"ProductController@getSaveItem",
+	"as"=>"product.saveItem"
 ]);
 
 Route::get('/addToCart/{id}',[
@@ -26,7 +26,15 @@ Route::get('/addToCart/{id}',[
 	"as"=>"product.addToCart"
 ]);
 
-Route::get('/cart', 'ProductController@getCart');
+Route::get('/removeFromCart/{id}',[
+	"uses"=>"ProductController@getRemoveFromCart",
+	"as"=>"product.removeFromCart"
+]);
+
+Route::get('/cart',[
+	"uses"=>'ProductController@getCart',
+	"as"=>"user.viewCart"
+]);
 
 Route::get('/signup',[
 	"uses"=>"UserController@getSignup",

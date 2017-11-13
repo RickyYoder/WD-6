@@ -6,7 +6,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col s12">
-				<h1>Profile Page</h1>
+				<h1>My WD6 Account</h1>
 			</div>
 		</div>
 		@if(count($errors) > 0)
