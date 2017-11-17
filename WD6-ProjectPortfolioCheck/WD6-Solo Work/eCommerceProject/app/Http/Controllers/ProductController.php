@@ -28,7 +28,18 @@ class ProductController extends Controller
 		$savedItems->add($id);
 		
 		$request->session()->put("savedItems",$savedItems);
-		die(print_r((Session::get("savedItems"))));
+	}
+	
+	public function getUnsaveItem(Request $request, $id){
+		#$request->session()->flush();
+		if(!Session::has('savedItems') || !(Product::where('id','=',$id)->exists())) return redirect()->route('product.index');
+		$savedItems = new SavedItems();
+		
+		$savedItems->remove($id);
+		
+		$request->session()->put("savedItems",$savedItems);
+		
+		return redirect('/cart');
 	}
 	
 	public function getAddToCart(Request $request, $id){
@@ -44,14 +55,22 @@ class ProductController extends Controller
 	}
 	
 	public function getCart(){
-		if(!Session::has('cart')){
-			return view('myCart.view',["products"=>null]);
+		$oldCart = Session::get('cart');
+		$cart = new Cart($oldCart);
+		$saved = new SavedItems();
+		$savedItems = [];
+		
+		//dd($saved);
+		
+		foreach($saved->items as $id=>$pId){
+			
+			$item = Product::find($pId);
+			array_push($savedItems,$item);
+			
 		}
-		else{
-			$oldCart = Session::get('cart');
-			$cart = new Cart($oldCart);
-			return view('myCart.view',["products"=>$cart->items, "totalPrice"=>$cart->totalPrice]);
-		}
+		
+		//dd($savedItems);
+		return view('myCart.view',["savedItems"=>$savedItems,"products"=>$cart->items, "totalPrice"=>$cart->totalPrice]);
 	}
 	
 	public function getRemoveFromCart(Request $request, $id){
@@ -70,6 +89,7 @@ class ProductController extends Controller
 			unset($cart->items[$id]);
 			
 			$request->session()->forget('cart');
+			$request->session()->set('cart',$cart);
 			
 			return redirect()->route('user.viewCart');
 		}

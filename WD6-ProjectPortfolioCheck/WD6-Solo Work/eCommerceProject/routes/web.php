@@ -20,6 +20,10 @@ Route::get('/save/{id}',[
 	"uses"=>"ProductController@getSaveItem",
 	"as"=>"product.saveItem"
 ]);
+Route::get('/unsave/{id}',[
+	"uses"=>"ProductController@getUnsaveItem",
+	"as"=>"product.unSaveItem"
+]);
 
 Route::get('/addToCart/{id}',[
 	"uses"=>"ProductController@getAddToCart",
