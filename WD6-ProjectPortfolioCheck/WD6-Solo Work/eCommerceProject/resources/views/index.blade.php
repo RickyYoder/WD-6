@@ -4,6 +4,13 @@
 
 @section('content')
 	<div class="container">
+		@if(Session::has('success'))
+			<div class="row">
+				<div id="charge-message" class="green">
+				{{ Session::get('success') }}
+				</div>
+			</div>
+		@endif
 		<div class="row">
 			@foreach($products as $product)
 				<div class="col s12 m4">

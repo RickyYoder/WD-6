@@ -30,13 +30,24 @@
 				{{ $product['item']['title'] }}
 				<div class="row"></div>
 				<div class="row">
-					<div class="col s12 m6 offset-m6">
+					<div class="col s12 m6">
+						<strong>${{ $product['price']/$product['qty'] }} /ea</strong>
+						<br/>
+						<strong>Total: ${{ $product['price'] }}</strong>
+					</div>
+					<div class="col s12 m6">
+						
 						<a class="btn waves waves-effect waves-dark" href="/removeFromCart/{{ $product['item']['id'] }}"><i class="material-icons">delete</i></a>
 					</div>
 				</div>
 				</div>
 			</div>
 		@endforeach
+		</div>
+		<div class="row">
+			<div class="col s12">
+				<h1>Grand Total: ${{ Session::get('cart')->totalPrice }}</h1>
+			</div>
 		</div>
 		@else
 		<div class="row">
@@ -76,7 +87,7 @@
 		
 		<div class="row">
 			<div class="col s12">
-				<a class="btn btn-large right waves waves-effect" href="#!">Checkout</a>
+				<a class="btn btn-large right waves waves-effect" href="{{ route('checkout') }}">Checkout</a>
 			</div>
 		</div>
 	</div>
