@@ -17,7 +17,7 @@
 					<div class="product">
 					<div class="row">
 						<div class="col s12 m6 left-align">
-							<strong>${{ $product->price }}</strong>
+							<strong>${{ $product->price }}/ea</strong>
 						</div>
 					</div>
 					<img src="{{ $product->imagePath }}" alt="Product Image" />
