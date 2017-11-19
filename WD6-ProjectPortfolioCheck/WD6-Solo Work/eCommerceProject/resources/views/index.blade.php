@@ -15,10 +15,20 @@
 			@foreach($products as $product)
 				<div class="col s12 m4">
 					<div class="product">
+					<div class="row">
+						<div class="col s12 m6 left-align">
+							<strong>${{ $product->price }}</strong>
+						</div>
+					</div>
 					<img src="{{ $product->imagePath }}" alt="Product Image" />
 					{{ $product->title }}
+					<br/>
+					<br/>
 					<div class="row">
-						<div class="col s12 right">
+						<div class="col s12 m4">
+							<a href="{{ route('product.saveItem', ['id'=>$product->id]) }}" class=""><i class="material-icons">star</i>Save</a>
+						</div>
+						<div class="col s12 m8 align-right">
 							<a href="{{ route('product.addToCart', ['id'=>$product->id]) }}" class="btn waves waves-effect waves-dark"><i class="material-icons">add_shopping_cart</i> Add to Cart</a>
 						</div>
 					</div>

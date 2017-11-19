@@ -54,6 +54,8 @@ class ProductController extends Controller
 			return redirect()->route('user.viewCart');
 		}
 		
+		else if(Session::get('cart')->totalPrice < 1) return redirect()->route('user.viewCart');
+		
 		$oldCart = Session::get('cart');
 		
 		$cart = new Cart($oldCart);
@@ -76,7 +78,6 @@ class ProductController extends Controller
 	}
 	
 	public function getUnsaveItem(Request $request, $id){
-		#$request->session()->flush();
 		if(!Session::has('savedItems') || !(Product::where('id','=',$id)->exists())) return redirect()->route('product.index');
 		$savedItems = new SavedItems();
 		
@@ -134,7 +135,7 @@ class ProductController extends Controller
 			unset($cart->items[$id]);
 			
 			$request->session()->forget('cart');
-			$request->session()->put('cart',$cart);
+			if(count($cart->items) > 0) $request->session()->put('cart',$cart);
 			
 			return redirect()->route('user.viewCart');
 		}

@@ -62,6 +62,6 @@
 		<script src="{{ asset('assets/js/matchHeight.js') }}"></script>
 		<script src="{{ asset('assets/js/materialize.min.js') }}"></script>
 		<script src="{{ asset('assets/js/main.js') }}"></script>
-		@yield('scripts');
+		@yield('scripts')
     </body>
 </html>

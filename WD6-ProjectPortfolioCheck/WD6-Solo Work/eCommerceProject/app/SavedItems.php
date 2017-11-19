@@ -27,10 +27,6 @@ class SavedItems
 			unset($this->items[$key]);
 		}
 		
-		if(count($this->items) < 1){
-			session()->forget('savedItems');
-			session()->flush();
-		}
 		else Session::put('savedItems',$this->items);
 		
 		return redirect()->route('user.viewCart')->send();
